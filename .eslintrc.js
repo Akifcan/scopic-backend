@@ -20,5 +20,11 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    'semi': ['error', 'never'],
+    'prettier/prettier': 'off',
+    'no-console': ["error", { allow: ["warn", "error"] }],
+    "no-dupe-else-if": ["error"],
+    "no-duplicate-imports": ["error"],
+    "no-unused-private-class-members": ["error"]
   },
 };
