@@ -1,6 +1,7 @@
-import { Body, Controller, Delete, Get, Inject, Param, Post, Query } from '@nestjs/common'
+import { Body, Controller, Delete, Get, Inject, Param, Post, Query, UseGuards } from '@nestjs/common'
 import { Product } from './entities/product.entity'
 import { ProductService } from './product.service'
+import { RolesGuard } from './roles.guard'
 
 @Controller('product')
 export class ProductController {
@@ -8,6 +9,7 @@ export class ProductController {
     @Inject() readonly productService: ProductService
 
     @Post()
+    @UseGuards(RolesGuard)
     createProduct(@Body() product: Product) {
         return this.productService.create(product)
     }
@@ -23,6 +25,7 @@ export class ProductController {
     }
 
     @Delete('/:id')
+    @UseGuards(RolesGuard)
     deleteProduct(@Param() params: { id: number }) {
         return this.productService.deleteProduct(params.id)
     }
