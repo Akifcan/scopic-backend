@@ -1,5 +1,5 @@
-setup config[]
-setup db[]
+setup config[x]
+setup db[x]
 guards[]
 create product[]
 list product[]
