@@ -1,6 +1,6 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm'
 import { IsNotEmpty, IsDateString } from 'class-validator'
-
+import { Auction } from '../../auction/auction.entity'
 
 @Entity()
 export class Product {
@@ -32,4 +32,11 @@ export class Product {
     @IsNotEmpty()
     @IsDateString()
     endDate: Date
+
+    @OneToMany(
+        () => Auction,
+        auction => auction.product,
+        { cascade: true }
+    )
+    auction: Auction
 }
