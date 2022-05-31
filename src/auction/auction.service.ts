@@ -25,6 +25,10 @@ export class AuctionService {
         return this.auctionRepository.save(this.auctionRepository.create(auction))
     }
 
+    listBids(productId: number) {
+        return this.auctionRepository.find({ product: { id: productId } })
+    }
+
     async findMaxBid(productId: number, min: number) {
         const offer = await this.auctionRepository.createQueryBuilder('auction')
             .select("MAX(auction.bid)", "max")
