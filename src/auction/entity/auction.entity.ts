@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, ManyToOne } from 'typeorm'
 import { IsNotEmpty } from 'class-validator'
-import { Product } from '../product/entities/product.entity'
+import { Product } from '../../product/entities/product.entity'
 
 
 @Entity()
@@ -18,7 +18,7 @@ export class Auction {
 
     @Column()
     @IsNotEmpty()
-    avatarSrc: number
+    avatarSrc: string
 
     @CreateDateColumn()
     createdAt: Date

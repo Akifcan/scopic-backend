@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm'
 import { IsNotEmpty, IsDateString } from 'class-validator'
-import { Auction } from '../../auction/auction.entity'
+import { Auction } from '../../auction/entity/auction.entity'
 
 @Entity()
 export class Product {
