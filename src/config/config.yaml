@@ -1,12 +1,7 @@
-http:
-  host: 'localhost'
-  port: 8080
-
 db:
   postgres:
     url: 'localhost'
-    port: 5432
-    database: 'yaml-db'
-
-  sqlite:
-    database: 'sqlite.db'
+    port: 5434
+    database: 'auction_db'
+    user: 'auction'
+    password: 'auction'
