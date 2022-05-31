@@ -30,4 +30,12 @@ export class ProductService {
 
         return { total: Math.ceil(totalRecord / limit), data: await query.getMany() }
     }
+
+    find(id: number) {
+        return this.productRepository.findOne({ id })
+    }
+
+    deleteProduct(id: number) {
+        return this.productRepository.delete({ id })
+    }
 }
