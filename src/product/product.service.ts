@@ -1,11 +1,13 @@
-import { Injectable } from '@nestjs/common'
+import { Inject, Injectable } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
 import { Repository } from 'typeorm'
 import { Product } from './entities/product.entity'
+import ProductTransformer from './product.transformer'
 
 @Injectable()
 export class ProductService {
-    @InjectRepository(Product) private productRepository: Repository<Product>
+    @InjectRepository(Product) readonly productRepository: Repository<Product>
+    @Inject() readonly productTransformer: ProductTransformer
 
     create(product: Product) {
         return this.productRepository.save(this.productRepository.create(product))
@@ -28,11 +30,14 @@ export class ProductService {
         }
         const totalRecord = await query.getCount()
 
-        return { total: Math.ceil(totalRecord / limit), data: await query.getMany() }
+        return {
+            total: Math.ceil(totalRecord / limit),
+            data: this.productTransformer.productsToPublicEntity(await query.getMany())
+        }
     }
 
-    find(id: number) {
-        return this.productRepository.findOne({ id })
+    async find(id: number) {
+        return this.productTransformer.productToPublicEntity(await this.productRepository.findOne({ id }))
     }
 
     deleteProduct(id: number) {
