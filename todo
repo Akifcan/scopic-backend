@@ -10,5 +10,5 @@ make bid[x]
 list bids[x]
 auction active control[x]
 
-seeder[]
+seeder[x]
 e2e tests[]
