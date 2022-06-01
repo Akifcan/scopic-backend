@@ -14,7 +14,7 @@ export class ProductService {
     }
 
     async manage() {
-        return this.productRepository.find()
+        return this.productTransformer.productsToPublicEntity(await this.productRepository.find())
     }
 
     async list(search: { keyword?: string, sort?: 'DESC' | 'ASC', page: number }) {
