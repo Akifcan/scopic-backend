@@ -13,6 +13,10 @@ export class ProductService {
         return this.productRepository.save(this.productRepository.create(product))
     }
 
+    async manage() {
+        return this.productRepository.find()
+    }
+
     async list(search: { keyword?: string, sort?: 'DESC' | 'ASC', page: number }) {
         const limit = 10
 

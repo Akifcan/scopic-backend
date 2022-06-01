@@ -19,6 +19,12 @@ export class ProductController {
         return this.productService.list({ keyword: query.keyword, sort: query.sort, page: query.page })
     }
 
+    @Get('/admin')
+    @UseGuards(RolesGuard)
+    manage() {
+        return this.productService.manage()
+    }
+
     @Get('/:id')
     singleProduct(@Param() params: { id: number }) {
         return this.productService.find(params.id)
@@ -29,5 +35,6 @@ export class ProductController {
     deleteProduct(@Param() params: { id: number }) {
         return this.productService.deleteProduct(params.id)
     }
+
 
 }
