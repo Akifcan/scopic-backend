@@ -8,6 +8,6 @@ import ProductTransformer from './product.transformer'
 @Module({
   imports: [TypeOrmModule.forFeature([Product])],
   providers: [ProductService, ProductTransformer],
-  controllers: [ProductController]
+  controllers: [ProductController],
 })
 export class ProductModule { }

@@ -4,6 +4,7 @@ import configuration from './config/configuration'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { ProductModule } from './product/product.module';
 import { AuctionModule } from './auction/auction.module';
+import { SeederModule } from './seeder/seeder.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { AuctionModule } from './auction/auction.module';
       }),
     }),
     ProductModule,
-    AuctionModule],
+    AuctionModule,
+    SeederModule],
 })
 export class AppModule { }

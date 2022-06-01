@@ -9,6 +9,6 @@ import ProductTransformer from 'src/product/product.transformer'
 @Module({
   imports: [TypeOrmModule.forFeature([Auction, Product])],
   controllers: [AuctionController],
-  providers: [AuctionService, ProductTransformer]
+  providers: [AuctionService, ProductTransformer],
 })
 export class AuctionModule { }
