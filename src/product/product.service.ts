@@ -14,15 +14,15 @@ export class ProductService {
     }
 
     async list(search: { keyword?: string, sort?: 'DESC' | 'ASC', page: number }) {
-
         const limit = 10
 
         const query = this.productRepository.createQueryBuilder('product')
             .skip((search.page - 1) * limit)
             .take(limit)
+            .orderBy('product.name', 'ASC')
 
         if (search.keyword) {
-            query.where('product.name like :name', { name: `%${search.keyword}%` })
+            query.where('LOWER(product.name) like :name', { name: `%${search.keyword.toLowerCase()}%` })
         }
 
         if (search.sort) {
