@@ -2,9 +2,9 @@ import { Module } from '@nestjs/common'
 import { ConfigModule, ConfigService } from '@nestjs/config'
 import configuration from './config/configuration'
 import { TypeOrmModule } from '@nestjs/typeorm'
-import { ProductModule } from './product/product.module';
-import { AuctionModule } from './auction/auction.module';
-import { SeederModule } from './seeder/seeder.module';
+import { ProductModule } from './product/product.module'
+import { AuctionModule } from './auction/auction.module'
+import { SeederModule } from './seeder/seeder.module'
 
 @Module({
   imports: [

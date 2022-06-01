@@ -7,6 +7,7 @@ import ProductTransformer from '../product/product.transformer'
 
 @Injectable()
 export class AuctionService {
+
     @InjectRepository(Auction) readonly auctionRepository: Repository<Auction>
     @InjectRepository(Product) readonly productRepository: Repository<Product>
     @Inject() readonly productTransformer: ProductTransformer
@@ -26,7 +27,12 @@ export class AuctionService {
     }
 
     listBids(productId: number) {
-        return this.auctionRepository.find({ product: { id: productId } })
+        return this.auctionRepository.find({
+            where: {
+                product: { id: productId }
+            },
+            order: { createdAt: -1 }
+        })
     }
 
     async findMaxBid(productId: number, min: number) {

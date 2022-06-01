@@ -19,6 +19,7 @@ frontend integration
     set auto bid[x]
     list bid logs[x]
     make offer[x]
-    management[]
+    management[x]
+countdown[x]
 socket[]
 auto bid[]
