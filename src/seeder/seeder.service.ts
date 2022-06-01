@@ -102,6 +102,78 @@ export class SeederService {
             startDate: '2022-05-10 09:30',
             endDate: '2022-07-10 09:30',
         }))
+        const product12 = await this.productRepository.save(this.productRepository.create({
+            name: 'Watch',
+            imageUrl: 'https://images.unsplash.com/photo-1528387810833-7b46bb8e8778?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80',
+            description: 'Old watch made in 1880',
+            price: 500,
+            startDate: '2022-05-10 09:30',
+            endDate: '2022-07-10 09:30',
+        }))
+        const product13 = await this.productRepository.save(this.productRepository.create({
+            name: 'Watch',
+            imageUrl: 'https://images.unsplash.com/photo-1528387810833-7b46bb8e8778?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80',
+            description: 'Old watch made in 1880',
+            price: 500,
+            startDate: '2022-05-10 09:30',
+            endDate: '2022-07-10 09:30',
+        }))
+        const product14 = await this.productRepository.save(this.productRepository.create({
+            name: 'Watch',
+            imageUrl: 'https://images.unsplash.com/photo-1528387810833-7b46bb8e8778?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80',
+            description: 'Old watch made in 1880',
+            price: 500,
+            startDate: '2022-05-10 09:30',
+            endDate: '2022-07-10 09:30',
+        }))
+        const product15 = await this.productRepository.save(this.productRepository.create({
+            name: 'Watch-2',
+            imageUrl: 'https://images.unsplash.com/photo-1528387810833-7b46bb8e8778?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80',
+            description: 'Old watch made in 1880',
+            price: 500,
+            startDate: '2022-05-10 09:30',
+            endDate: '2022-07-10 09:30',
+        }))
+        const product16 = await this.productRepository.save(this.productRepository.create({
+            name: 'Watch-3',
+            imageUrl: 'https://images.unsplash.com/photo-1528387810833-7b46bb8e8778?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80',
+            description: 'Old watch made in 1880',
+            price: 500,
+            startDate: '2022-05-10 09:30',
+            endDate: '2022-07-10 09:30',
+        }))
+        const product17 = await this.productRepository.save(this.productRepository.create({
+            name: 'Watch-4',
+            imageUrl: 'https://images.unsplash.com/photo-1528387810833-7b46bb8e8778?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80',
+            description: 'Old watch made in 1880',
+            price: 500,
+            startDate: '2022-05-10 09:30',
+            endDate: '2022-07-10 09:30',
+        }))
+        const product18 = await this.productRepository.save(this.productRepository.create({
+            name: 'Watch-5',
+            imageUrl: 'https://images.unsplash.com/photo-1528387810833-7b46bb8e8778?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80',
+            description: 'Old watch made in 1880',
+            price: 500,
+            startDate: '2022-05-10 09:30',
+            endDate: '2022-07-10 09:30',
+        }))
+        const product19 = await this.productRepository.save(this.productRepository.create({
+            name: 'Watch-6',
+            imageUrl: 'https://images.unsplash.com/photo-1528387810833-7b46bb8e8778?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80',
+            description: 'Old watch made in 1880',
+            price: 500,
+            startDate: '2022-05-10 09:30',
+            endDate: '2022-07-10 09:30',
+        }))
+        const product20 = await this.productRepository.save(this.productRepository.create({
+            name: 'Watch-7',
+            imageUrl: 'https://images.unsplash.com/photo-1528387810833-7b46bb8e8778?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80',
+            description: 'Old watch made in 1880',
+            price: 500,
+            startDate: '2022-05-10 09:30',
+            endDate: '2022-07-10 09:30',
+        }))
 
 
         const auctionProduct = await this.auctionRepository.save(
@@ -223,6 +295,15 @@ export class SeederService {
             product9,
             product10,
             product11,
+            product12,
+            product13,
+            product14,
+            product15,
+            product16,
+            product17,
+            product18,
+            product19,
+            product20,
             auctionProduct
         }
     }

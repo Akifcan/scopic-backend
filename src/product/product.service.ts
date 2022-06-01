@@ -15,7 +15,7 @@ export class ProductService {
 
     async list(search: { keyword?: string, sort?: 'DESC' | 'ASC', page: number }) {
 
-        const limit = 3
+        const limit = 10
 
         const query = this.productRepository.createQueryBuilder('product')
             .skip((search.page - 1) * limit)
