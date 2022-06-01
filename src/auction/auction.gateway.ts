@@ -24,7 +24,7 @@ export class AuctionGateway implements OnGatewayConnection {
 
   @SubscribeMessage('bid')
   handleMessage(client: Socket, payload: Auction) {
-    this.server.emit('newBid', payload)
+    client.broadcast.to(payload.product.id.toString()).emit('newBid', payload)
   }
 
 
