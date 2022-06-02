@@ -21,5 +21,6 @@ frontend integration
     make offer[x]
     management[x]
 countdown[x]
-socket[]
-auto bid[]
+socket[x]
+auto bid[x]
+create[x]
