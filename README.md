@@ -2,28 +2,29 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  ## Stacks
+## Stacks
  - Node.js
  - React.js
  - Nest.js
  - Next.js
  - Postgres
  - Typeorm
+ - Bootstrap
+ - Typescript
 
-# Scopic Task App
 
 ## Please first run backend app
-`npm run start:dev`
+### in docker folder
+- `docker compose up -d`
+### root folder
+- `npm run start:dev` 
+- `npm run test:e2e`
+
 
 ## Please run this endpoint after run backend app
+`http://localhost:3000/seeder`
 
 ## Postman collection link: [Click](https://we.tl/t-e3W45YlzKH)
-
-`http://localhost:3000/seeder`
-`npm run test:e2e`
 
 ## Endpoints
 
@@ -117,3 +118,12 @@ const users: User[] = [
     },
 ]
 ````
+
+## Frontend Routes
+ - create/index.tsx
+ - dashboard/index.tsx
+ - product/[slug].tsx
+ - settings/index.tsx
+ - sign-in/index.tsx
+ - 404.tsx
+ - index.tsx
