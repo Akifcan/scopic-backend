@@ -5,69 +5,115 @@
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+  ## Stacks
+ - Node.js
+ - React.js
+ - Nest.js
+ - Next.js
+ - Postgres
+ - Typeorm
 
-## Description
+# Scopic Task App
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Please first run backend app
+`npm run start:dev`
 
-## Installation
+## Please run this endpoint after run backend app
 
-```bash
-$ npm install
+## Postman collection link: [Click](https://we.tl/t-e3W45YlzKH)
+
+`http://localhost:3000/seeder`
+`npm run test:e2e`
+
+## Endpoints
+
+- **POST** /product
+  - This action will create new product.
+```
+{
+    "name": "wooden bike",
+    "description": "old good wooden bike",
+    "price": 200,
+    "imageUrl": "https://images.unsplash.com/photo-1458228269118-09f55da39bfa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "startDate": "2022-03-25 09:30",
+    "endDate": "2022-04-25 09:30"
+}
 ```
 
-## Running the app
+- **GET** /product?keyword=&sort=&page=1
+    - This action will list products
+- **GET** /product/3
+    - This action will list single product
+- **GET** /product/admin
+    - This action only for admin users. 
+- **DELETE** /product/3
+    - This action only for admin users. 
+- **POST** /auction
+    - This action will make bid
+    ```
+        {
+    "product": {"id": 134},
+    "bid": 15602,
+    "name": "akif Kara",
+    "avatarSrc": "https://images.unsplash.com/photo-1546539782-6fc531453083?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
+}
+    ```
+- **GET** /auction/134
+    - This action will list all bids of product.
 
-```bash
-# development
-$ npm run start
 
-# watch mode
-$ npm run start:dev
 
-# production mode
-$ npm run start:prod
+## Registered users: (this is not database)
 ```
+    interface User {
+    name: string,
+    avatarSrc: string,
+    email: string,
+    role: Role,
+    password: string,
+    autoBidAmount: number
+}
 
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+const users: User[] = [
+    {
+        "name": "akifcan",
+        avatarSrc: "https://randomuser.me/api/portraits/men/97.jpg",
+        email: 'akfkara97@gmail.com',
+        role: 'admin',
+        password: '12345',
+        autoBidAmount: 0,
+    },
+    {
+        "name": "admin",
+        avatarSrc: "https://randomuser.me/api/portraits/men/29.jpg",
+        email: 'admin@gmail.com',
+        role: 'admin',
+        password: '12345',
+        autoBidAmount: 0,
+    },
+    {
+        "name": "john doe",
+        avatarSrc: "https://randomuser.me/api/portraits/men/32.jpg",
+        email: 'john@gmail.com',
+        role: 'user',
+        password: '12345',
+        autoBidAmount: 0,
+    },
+    {
+        "name": "lena",
+        avatarSrc: "https://images.unsplash.com/photo-1510227272981-87123e259b17?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=3759e09a5b9fbe53088b23c615b6312e",
+        email: 'lena@gmail.com',
+        role: 'user',
+        password: '12345',
+        autoBidAmount: 0,
+    },
+    {
+        "name": "alex",
+        avatarSrc: "https://randomuser.me/api/portraits/men/12.jpg",
+        email: 'alex@gmail.com',
+        role: 'user',
+        password: '12345',
+        autoBidAmount: 0,
+    },
+]
+````
